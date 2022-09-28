@@ -1,8 +1,6 @@
 from http import client
 from flask import Flask, Response, request, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
-import mysql.connector
-import json
 
 app = Flask(__name__, template_folder='templates')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cliente.sqlite3'
