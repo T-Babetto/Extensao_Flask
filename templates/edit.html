@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Adicionar Cliente</title>
+    <title>Editar Cliente</title>
 </head>
 <body>
-    <h1 style="text-align:center;">Cadastrar novo Cliente</h1>
-    <form action="/add" class="container" method="post">
+    <h1 style="text-align:center;">Editar {{ cliente.nome }}</h1>
+    <form action="/edit/{{ cliente.id }}" class="container" method="post">
         <div class="row">
             <div class="col-md-6">
-                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control">
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control" value="{{ cliente.nome }}">
             </div>
             <div class="col-md-6">
-                <input type="text" name="email" id="email" placeholder="Email" class="form-control">
+                <input type="text" name="email" id="email" placeholder="Email" class="form-control" value="{{ cliente.email }}">
             </div>
         </div>
         <br>
