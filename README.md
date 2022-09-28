@@ -2,8 +2,15 @@
 
   CRUD for clients 
   
-  #Install Python
+  # Install Python
   
-  #run pip install flask
+  Run
+  # pip install flask
   
-  #pip install Flask-SQLAlchemy
+  Run
+  # pip install Flask-SQLAlchemy
+  
+  Finally
+  
+  Run
+  #py -m flask run
