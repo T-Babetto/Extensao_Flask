@@ -8,14 +8,14 @@
     <title>Editar Cliente</title>
 </head>
 <body>
-    <h1 style="text-align:center;">Editar {{ cliente.nome }}</h1>
-    <form action="/edit/{{ cliente.id }}" class="container" method="post">
+    <h1 style="text-align:center;">Editar {{ clientes.nome }}</h1>
+    <form action="/edit/{{ clientes.id }}" class="container" method="post">
         <div class="row">
             <div class="col-md-6">
-                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control" value="{{ cliente.nome }}">
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="form-control" value="{{ clientes.nome }}">
             </div>
             <div class="col-md-6">
-                <input type="text" name="email" id="email" placeholder="Email" class="form-control" value="{{ cliente.email }}">
+                <input type="text" name="email" id="email" placeholder="Email" class="form-control" value="{{ clientes.email }}">
             </div>
         </div>
         <br>

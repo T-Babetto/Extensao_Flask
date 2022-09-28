@@ -5,7 +5,7 @@ import mysql.connector
 import json
 
 app = Flask(__name__, template_folder='templates')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///clientes.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cliente.sqlite3'
 
 db = SQLAlchemy(app)
 
@@ -22,14 +22,14 @@ class Cliente(db.Model):
 
 @app.route('/')
 def index():
-    clientes = Cliente.query.all()
-    return render_template('index.html', clientes=clientes)
+    cliente = Cliente.query.all()
+    return render_template('index.html', cliente=cliente)
 
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
     if request.method == 'POST':
-        cliente = Cliente(request.form['nome'], request.form['email'])
+        clientes = Cliente(request.form['nome'], request.form['email'])
         db.session.add(cliente)
         db.session.commit()
         return redirect(url_for('index'))
@@ -38,19 +38,19 @@ def add():
 
 @app.route('/edit/<int:id>', methods=['GET, POST'])
 def edit(id):
-    cliente = Cliente.query.get(id)
+    clientes = Cliente.query.get(id)
     if request.method == 'POST':
-        cliente.nome = request.form['nome']
-        cliente.email = request.form['email']
+        clientes.nome = request.form['nome']
+        clientes.email = request.form['email']
         db.session.commit()
         return redirect(url_for('index'))
-    return render_template('edit.html', cliente=cliente)
+    return render_template('edit.html', clientes=clientes)
 
 
 @app.route('/delete/<int:id>')
 def delete(id):
-    cliente = Cliente.query.get(id)
-    db.session.delete(cliente)
+    clientes = Cliente.query.get(id)
+    db.session.delete(clientes)
     db.session.commit()
     return redirect(url_for('index'))
 
