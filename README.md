@@ -11,7 +11,5 @@
   # Run
   pip install Flask-SQLAlchemy
   
-  Finally
-  
   # Run
   py -m flask run
